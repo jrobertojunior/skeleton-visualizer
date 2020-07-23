@@ -61,7 +61,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
         /// <summary>
         /// Brush used for drawing joints that are currently tracked
         /// </summary>
-        private readonly Brush trackedJointBrush = new SolidColorBrush(Color.FromArgb(255, 68, 192, 68));
+        private readonly Brush trackedJointBrush = Brushes.LightGray/*SolidColorBrush(Color.FromArgb(255, 68, 192, 68))*/;
 
         /// <summary>
         /// Brush used for drawing joints that are currently inferred
@@ -164,7 +164,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
             {
                 //Canvas.Update(joints: Source.Joints, jointPoints: Source.JointPoints, background: Source.ImageSource, text: inputSource.ToString());
                 //Canvas.Update(joints: Source.Joints, jointPoints: Source.JointPoints, text: headerText, backgroundColor: Brushes.White, skeletonColor: skeletonColor);
-                Update(e.joints, e.jointPoints, text: playback.frame.ToString(), backgroundColor: Brushes.Pink, skeletonColor: Brushes.Blue);
+                Update(e.joints, e.jointPoints, text: playback.frame.ToString(), backgroundColor: Brushes.White, skeletonColor: Brushes.DodgerBlue);
             });
 
         }
@@ -344,7 +344,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
                 flowDirection: FlowDirection.LeftToRight,
                 typeface: new Typeface("Verdana"),
                 emSize: 20,
-                foreground: Brushes.Black);
+                foreground: Brushes.Gray);
 
             dc.DrawText(ftext, new Point(10, 10));
         }
